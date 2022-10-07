@@ -1,8 +1,20 @@
+///////////BeSingular Academy////////////
+///////////Date: 07-10-2022//////////////
+///////////Vikas Singh///////////////////
+///////////Dice Game////////////////
+/*******This game named "Dice Game" is designed by using the P5.js which shows
+all the functionality that we need to play the game.The Game starts by pressing 
+on the game screen and player 1 plays by pressing the left arrow key and player 2
+by clicking the right arrow key.The game goes upto 3 rounds after that the game 
+pauses and result is declared by clicking the mouse on the screen.*******/
+
+
+///////////////Declaring Variables///////////////
+
 var dicenumber=0;
 var score1=0;
 var score2=0;
 var round_number=1;
-//var result;
 var screen=1;
 var max_round=6;
  
@@ -10,6 +22,8 @@ var max_round=6;
 function setup() {
   createCanvas(400, 400);
 }
+
+///////////////Draw function that perform all the actions by calling the screens.//////////////
 
 function draw() {
   print(keyCode);
@@ -29,6 +43,8 @@ function draw() {
   }
 }
 
+/////////////Function contains the screen 1 content.//////////////////
+
 function startScreen(){
   background(220);
   textSize(50);
@@ -36,6 +52,8 @@ function startScreen(){
   textSize(15);
   text("Click to start",width/2.5,height-40);
 }
+
+/////////////Function contains the game screen contents.//////////////
 
 function gameScreen(){
   background(240);
@@ -48,6 +66,8 @@ function gameScreen(){
   keyPressed();
   
 }
+
+/////////////Function contains the result screen contents.//////////////
 
 function resultScreen(){
   background(220);
@@ -67,6 +87,8 @@ function resultScreen(){
   }
    
 }
+
+/////////////Function draws the dice according to the number that comes randomly when the player presses the key.//////////////
 
 function dice(){
   fill(100);
@@ -106,10 +128,13 @@ function dice(){
 
 }
 
+/////////////Function increments the screen number when mouse is pressed.//////////////
+
 function mousePressed(){
   screen = screen +1;
 }
 
+/////////////Player controls and score incrementation are defined in this function//////////////
 
 function keyPressed(){
   if(round_number <= (max_round*2)){
